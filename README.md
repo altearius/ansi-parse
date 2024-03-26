@@ -124,3 +124,67 @@ initialState.foreground = 'red';
 
 console.log(...Parse(text, initialState));
 ```
+
+## API Reference
+
+This package exposes a `Parse` function and an `AnsiState` class.
+
+### Parse
+
+The `Parse` function has the following signature:
+
+```typescript
+function* Parse(
+  ansi: string,
+  initialState?: AnsiState
+): Generator<{ state: AnsiState; value: string }, AnsiState>;
+```
+
+### AnsiState
+
+The `AnsiState` class describes the current rendering flags. It has the
+following properties:
+
+| Property     | Type                          |
+| ------------ | ----------------------------- |
+| intensity    | `bold`, `faint`, or `normal`  |
+| italic       | boolean                       |
+| underline    | `double`, `none`, or `single` |
+| blink        | `fast`, `none`, or `slow`     |
+| inverted     | boolean                       |
+| concealed    | boolean                       |
+| crossedOut   | boolean                       |
+| proportional | boolean                       |
+| foreground   | `AnsiColor`                   |
+| background   | `AnsiColor`                   |
+| font         | AnsiFont                      |
+| framed       | boolean                       |
+| circled      | boolean                       |
+| overlined    | boolean                       |
+
+The `AnsiColor` type represents a color. It can be one of the following:
+
+- `readonly [number, number, number]` representing an RGB color. ANSI color
+  codes that originate from a color space other than RGB are converted to RGB.
+- `'default'`
+- `'transparent'`
+
+Or, it can be one of the following named colors:
+
+- `'black'`
+- `'blue'`
+- `'cyan'`
+- `'green'`
+- `'magenta'`
+- `'red'`
+- `'white'`
+- `'yellow'`
+- `'bright black'`
+- `'bright blue'`
+- `'bright cyan'`
+- `'bright default'`
+- `'bright green'`
+- `'bright magenta'`
+- `'bright red'`
+- `'bright white'`
+- `'bright yellow'`
