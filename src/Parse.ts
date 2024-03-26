@@ -2,10 +2,7 @@ import AnsiState from './AnsiState.js';
 import ApplyCode from './ApplyCode.js';
 import ParseCodes from './ParseCodes.js';
 
-export default function* Parse(
-	ansi: string,
-	initial?: AnsiState
-) {
+export default function* Parse(ansi: string, initial?: AnsiState) {
 	const currentState = new AnsiState(initial);
 
 	for (const token of ParseCodes(ansi)) {

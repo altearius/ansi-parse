@@ -116,7 +116,6 @@ of the previous line.
 For instance:
 
 ```javascript
-
 import { AnsiState, Parse } from '@altearius/ansi-parse';
 
 const text = '\x1b[31mHello \x1b[32mworld\x1b[0m!';

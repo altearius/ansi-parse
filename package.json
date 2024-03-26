@@ -6,6 +6,7 @@
   "packageManager": "yarn@4.1.1",
   "version": "0.1.0",
   "type": "module",
+  "main": "dist/index.js",
   "devDependencies": {
     "@types/node": "20.X.X",
     "eslint": "^8.57.0",
