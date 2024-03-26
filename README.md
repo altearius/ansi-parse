@@ -2,12 +2,6 @@
 
 This is a simple library for parsing ANSI escape codes in strings.
 
-## Installation
-
-```bash
-yarn add @altearius/ansi-parse
-```
-
 ## Usage
 
 The primary use case is to provide a basis for supporting rendering text
