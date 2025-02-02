@@ -1,0 +1,27 @@
+name: Code Analysis
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  code-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare dependencies
+        uses: ./.github/actions/prepare-dependencies
+
+      - name: Check white-space
+        run: yarn prettier --check .
+
+      - name: Build project
+        run: yarn tsc --build ./tsconfig.release.json
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test

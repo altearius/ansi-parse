@@ -19,8 +19,7 @@
     "clean": "node --eval \"fs.rmSync('dist', { recursive: true, force: true })\"",
     "build": "tsc --build ./tsconfig.json",
     "format": "prettier --write .",
-    "test": "yarn build && node --enable-source-maps --experimental-test-coverage --test dist",
-    "release": "yarn test && yarn clean && yarn tsc --build ./tsconfig.release.json",
+    "test": "node --enable-source-maps --experimental-test-coverage --test dist",
     "lint": "eslint ."
   }
 }

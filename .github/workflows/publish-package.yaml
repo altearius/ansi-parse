@@ -1,0 +1,35 @@
+name: Publish Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-package:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare dependencies
+        uses: ./.github/actions/prepare-dependencies
+
+      - name: Build project
+        run: yarn build
+
+        # Based on https://github.com/actions/setup-node/issues/942
+      - name: Authentication
+        run: 'echo npmAuthToken: "$NPM_AUTH_TOKEN" >> ./.yarnrc.yml'
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: Publish package
+        run: yarn npm publish --access public
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

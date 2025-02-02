@@ -9,7 +9,8 @@ with ANSI escape codes.
 
 To this end, this library accepts as input a string containing such ANSI codes
 and produces a series of objects that describe segments of the original text,
-along with their associated ANSI states.
+along with their associated ANSI states. The goal is to produce a data structure
+that can be consumed to render the text in a graphical environment.
 
 For instance:
 
