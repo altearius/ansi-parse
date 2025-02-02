@@ -5,7 +5,7 @@ import tseslint from 'typescript-eslint';
 const tsProjects = ['./tsconfig.json'];
 
 /**
- * @type {import('eslint').Linter.FlatConfig[]}
+ * @type {import('eslint').Linter.Config[]}
  */
 const config = [
 	{
@@ -115,7 +115,6 @@ const config = [
 			'@typescript-eslint/no-meaningless-void-operator': 'error',
 			'@typescript-eslint/no-require-imports': 'error',
 			'@typescript-eslint/no-shadow': 'error',
-			'@typescript-eslint/no-throw-literal': 'error',
 			'@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
 			'@typescript-eslint/no-unused-vars': [
 				'error',
@@ -123,6 +122,7 @@ const config = [
 			],
 			'@typescript-eslint/no-useless-constructor': 'error',
 			'@typescript-eslint/no-useless-empty-export': 'error',
+			'@typescript-eslint/only-throw-error': 'error',
 			'@typescript-eslint/prefer-destructuring': 'error',
 			'@typescript-eslint/prefer-enum-initializers': 'error',
 			'@typescript-eslint/prefer-includes': 'error',

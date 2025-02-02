@@ -3,17 +3,17 @@
   "description": "Parse ANSI strings and manage ANSI state",
   "license": "MIT",
   "name": "@altearius/ansi-parse",
-  "packageManager": "yarn@4.1.1",
+  "packageManager": "yarn@4.6.0",
   "version": "0.1.0",
   "type": "module",
   "main": "dist/index.js",
   "devDependencies": {
-    "@types/node": "20.X.X",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "prettier": "^3.2.5",
-    "typescript": "^5.4.3",
-    "typescript-eslint": "^7.4.0"
+    "@types/node": "^20.17.16",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.22.0"
   },
   "scripts": {
     "clean": "node --eval \"fs.rmSync('dist', { recursive: true, force: true })\"",
