@@ -15,3 +15,4 @@ dist/
 node_modules/
 tsconfig.tsbuildinfo
 tsconfig.release.tsbuildinfo
+package.tgz

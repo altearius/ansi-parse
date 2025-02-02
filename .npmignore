@@ -1,0 +1,10 @@
+.editorconfig
+.gitattributes
+.prettierignore
+.prettierrc.yml
+eslint.config.js
+src
+tsconfig.json
+tsconfig.release.json
+tsconfig.tsbuildinfo
+tsconfig.release.tsbuildinfo
